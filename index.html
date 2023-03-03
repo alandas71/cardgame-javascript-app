@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            padding: 10px;
+        }
+
+        p {
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        #wallpaper {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        #jogo-silabas {
+            flex-direction: column;
+            width: 700px;
+            padding: 20px;
+        }
+
+        .cards1 {
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            gap: 20px;
+            padding: 5px;
+        }
+
+        .cards2 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            right: 0;
+            padding: 5px;
+        }
+
+        .cards3 {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            gap: 5px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+
+            border: black solid 2px;
+        }
+
+        .squareSilaba {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border: black solid 2px;
+        }
+
+        .columns {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+
+        }
+
+        .column {
+            border: black solid 2px;
+            width: 100px;
+            height: 313px;
+            background-color: rgb(193, 197, 197);
+            padding-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wallpaper">
+        <div class="cards1">
+            <div class="card11 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card12 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card13 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card14 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card15 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+        </div>
+
+        <div id="jogo-silabas">
+            <h1>Jogo das silabas</h1>
+            <p>Arraste cada figura à sua sílaba inicial</p>
+
+            <div class="silaba1 squareSilaba"></div>
+            <div class="silaba2 squareSilaba"></div>
+            <div class="silaba3 squareSilaba"></div>
+            <div class="silaba4 squareSilaba"></div>
+            <div class="silaba5 squareSilaba"></div>
+            <div class="columns">
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+            </div>
+            <div class="cards3">
+                <div class="card31 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                </div>
+                <div class="card32 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                </div>
+                <div class="card33 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                </div>
+                <div class="card34 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                </div>
+                <div class="card35 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                </div>
+            </div>
+        </div>
+        <div class="cards2">
+            <div class="card21 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card22 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card23 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card24 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+            <div class="card25 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            </div>
+        </div>
+    </div>
+    <script>
+        const columns = document.querySelectorAll(".column");
+
+        document.addEventListener("dragstart", (e) => {
+            e.target.classList.add("dragging");
+        });
+
+        document.addEventListener("dragend", (e) => {
+            e.target.classList.remove("dragging");
+        });
+
+        columns.forEach((item) => {
+            item.addEventListener("dragover", (e) => {
+                const dragging = document.querySelector(".dragging");
+                const applyAfter = getNewPosition(item, e.clientY);
+
+                if (applyAfter) {
+                    applyAfter.insertAdjacentElement("afterend", dragging);
+                } else {
+                    item.prepend(dragging);
+                }
+            });
+        });
+
+        function getNewPosition(column, posY) {
+            const cards = column.querySelectorAll(".square:not(.dragging)");
+            let result;
+
+            for (let refer_card of cards) {
+                const box = refer_card.getBoundingClientRect();
+                const boxCenterY = box + box.height / 2;
+
+                if (posY >= boxCenterY) result = refer_card;
+            }
+
+            return result;
+        }
+    </script>
+</body>
+
+</html>
