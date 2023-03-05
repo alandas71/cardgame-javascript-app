@@ -93,15 +93,15 @@
 <body>
     <div id="wallpaper">
         <div class="cards1">
-            <div class="card11 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card11" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card12 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card12" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card13 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card13" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card14 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card14" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card15 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card15" width="100px" height="100px" draggable="true">
             </div>
         </div>
 
@@ -122,32 +122,74 @@
                 <div class="column"></div>
             </div>
             <div class="cards3">
-                <div class="card31 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                <div class="square"><img src="Dick_Dastardly.png" id="card31" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="card32 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                <div class="square"><img src="Dick_Dastardly.png" id="card32" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="card33 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                <div class="square"><img src="Dick_Dastardly.png" id="card33" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="card34 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                <div class="square"><img src="Dick_Dastardly.png" id="card34" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="card35 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+                <div class="square"><img src="Dick_Dastardly.png" id="card35" width="100px" height="100px"
+                        draggable="true">
                 </div>
             </div>
         </div>
         <div class="cards2">
-            <div class="card21 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card21" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card22 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card22" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card23 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card23" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card24 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card24" width="100px" height="100px" draggable="true">
             </div>
-            <div class="card25 square"><img src="Dick_Dastardly.png" width="100px" height="100px" draggable="true">
+            <div class="square"><img src="Dick_Dastardly.png" id="card25" width="100px" height="100px" draggable="true">
             </div>
         </div>
     </div>
     <script>
+
+        var silabas = [
+            { silaba: "BA", img1: "img/bala.jpg", img2: "img/banana.jpg", img3: "img/batata.jpg" },
+            { silaba: "BE", img1: "img/bebe.jpg", img2: "img/beliche.jpg", img3: "img/berinjela.jpg" },
+            { silaba: "BI", img1: "img/bicicleta.jpg", img2: "img/bico.jpg", img3: "img/bigode.jpg" },
+            { silaba: "BO", img1: "img/bola.jpg", img2: "img/bota.jpg", img3: "img/botao.jpg" },
+            { silaba: "BU", img1: "img/bufalo.jpg", img2: "img/bule.jpg", img3: "img/buzina.jpg" },
+            { silaba: "CA", img1: "img/cama.jpg", img2: "img/casa.jpg", img3: "img/cavalo.jpg" },
+            { silaba: "CO", img1: "img/copo.jpg", img2: "img/coracao.jpg", img3: "img/coelho.jpg" },
+            { silaba: "CU", img1: "img/cubo.jpg", img2: "img/cuco.jpg", img3: "img/curativo.jpg" },
+            { silaba: "CE", img1: "img/cebola.jpg", img2: "img/cenoura.jpg", img3: "img/cereja.jpg" },
+            { silaba: "CI", img1: "img/cigarra.jpg", img2: "img/cigarro.jpg", img3: "img/cisne.jpg" },
+        ];
+
+        var quantidade = silabas.length;
+        var finalArr = Math.floor(Math.random() * quantidade / 5) * 5 + 5;
+        var inicialArr = finalArr - 5;
+        var arrSelecao = silabas.slice(inicialArr, finalArr);
+
+        var imgSquare = document.querySelector("#card11").src = arrSelecao[0].img1;
+        var imgSquare = document.querySelector("#card12").src = arrSelecao[1].img1;
+        var imgSquare = document.querySelector("#card13").src = arrSelecao[2].img1;
+        var imgSquare = document.querySelector("#card14").src = arrSelecao[3].img1;
+        var imgSquare = document.querySelector("#card15").src = arrSelecao[4].img1;
+
+        var imgSquare = document.querySelector("#card21").src = arrSelecao[0].img2;
+        var imgSquare = document.querySelector("#card22").src = arrSelecao[1].img2;
+        var imgSquare = document.querySelector("#card23").src = arrSelecao[2].img2;
+        var imgSquare = document.querySelector("#card24").src = arrSelecao[3].img2;
+        var imgSquare = document.querySelector("#card25").src = arrSelecao[4].img2;
+
+        var imgSquare = document.querySelector("#card31").src = arrSelecao[0].img3;
+        var imgSquare = document.querySelector("#card32").src = arrSelecao[1].img3;
+        var imgSquare = document.querySelector("#card33").src = arrSelecao[2].img3;
+        var imgSquare = document.querySelector("#card34").src = arrSelecao[3].img3;
+        var imgSquare = document.querySelector("#card35").src = arrSelecao[4].img3;
+
         const columns = document.querySelectorAll(".column");
 
         document.addEventListener("dragstart", (e) => {
