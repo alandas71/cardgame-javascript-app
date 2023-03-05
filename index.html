@@ -4,104 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            padding: 10px;
-        }
-
-        p {
-            padding: 5px;
-            font-size: 20px;
-        }
-
-        #wallpaper {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        #jogo-silabas {
-            flex-direction: column;
-            width: 700px;
-            padding: 20px;
-        }
-
-        .cards1 {
-            display: flex;
-            flex-direction: column;
-            left: 0;
-            gap: 20px;
-            padding: 5px;
-        }
-
-        .cards2 {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            right: 0;
-            padding: 5px;
-        }
-
-        .cards3 {
-            display: flex;
-            justify-content: center;
-            padding: 40px;
-            gap: 5px;
-        }
-
-        .square {
-            width: 100px;
-            height: 100px;
-
-            border: black solid 2px;
-        }
-
-        .squareSilaba {
-            width: 100px;
-            height: 100px;
-            display: inline-block;
-            border: black solid 2px;
-        }
-
-        .columns {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-
-        }
-
-        .column {
-            border: black solid 2px;
-            width: 100px;
-            height: 313px;
-            background-color: rgb(193, 197, 197);
-            padding-top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div id="wallpaper">
         <div class="cards1">
-            <div class="square"><img src="Dick_Dastardly.png" id="card11" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card11" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card12" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card12" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card13" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card13" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card14" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card14" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card15" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card15" class="item" width="100px" height="100px" draggable="true">
             </div>
         </div>
 
@@ -115,40 +32,35 @@
             <div class="silaba4 squareSilaba"></div>
             <div class="silaba5 squareSilaba"></div>
             <div class="columns">
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
+                <div class="column" id="column1"></div>
+                <div class="column" id="column2"></div>
+                <div class="column" id="column3"></div>
+                <div class="column" id="column4"></div>
+                <div class="column" id="column5"></div>
             </div>
             <div class="cards3">
-                <div class="square"><img src="Dick_Dastardly.png" id="card31" width="100px" height="100px"
-                        draggable="true">
+                <div class="square"><img id="card31" class="item" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img src="Dick_Dastardly.png" id="card32" width="100px" height="100px"
-                        draggable="true">
+                <div class="square"><img id="card32" class="item" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img src="Dick_Dastardly.png" id="card33" width="100px" height="100px"
-                        draggable="true">
+                <div class="square"><img id="card33" class="item" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img src="Dick_Dastardly.png" id="card34" width="100px" height="100px"
-                        draggable="true">
+                <div class="square"><img id="card34" class="item" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img src="Dick_Dastardly.png" id="card35" width="100px" height="100px"
-                        draggable="true">
+                <div class="square"><img id="card35" class="item" width="100px" height="100px" draggable="true">
                 </div>
             </div>
         </div>
         <div class="cards2">
-            <div class="square"><img src="Dick_Dastardly.png" id="card21" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card21" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card22" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card22" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card23" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card23" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card24" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card24" class="item" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img src="Dick_Dastardly.png" id="card25" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card25" class="item" width="100px" height="100px" draggable="true">
             </div>
         </div>
     </div>
@@ -171,6 +83,13 @@
         var finalArr = Math.floor(Math.random() * quantidade / 5) * 5 + 5;
         var inicialArr = finalArr - 5;
         var arrSelecao = silabas.slice(inicialArr, finalArr);
+
+
+        var silaba1 = document.querySelector(".silaba1").innerHTML = arrSelecao[0].silaba;
+        var silaba2 = document.querySelector(".silaba2").innerHTML = arrSelecao[1].silaba;
+        var silaba3 = document.querySelector(".silaba3").innerHTML = arrSelecao[2].silaba;
+        var silaba4 = document.querySelector(".silaba4").innerHTML = arrSelecao[3].silaba;
+        var silaba5 = document.querySelector(".silaba5").innerHTML = arrSelecao[4].silaba;
 
         var imgSquare = document.querySelector("#card11").src = arrSelecao[0].img1;
         var imgSquare = document.querySelector("#card12").src = arrSelecao[1].img1;
@@ -195,26 +114,26 @@
         document.addEventListener("dragstart", (e) => {
             e.target.classList.add("dragging");
         });
-
         document.addEventListener("dragend", (e) => {
             e.target.classList.remove("dragging");
         });
 
         columns.forEach((item) => {
             item.addEventListener("dragover", (e) => {
+                e.preventDefault();
                 const dragging = document.querySelector(".dragging");
                 const applyAfter = getNewPosition(item, e.clientY);
 
                 if (applyAfter) {
                     applyAfter.insertAdjacentElement("afterend", dragging);
                 } else {
-                    item.prepend(dragging);
+                    item.appendChild(dragging);
                 }
             });
         });
 
         function getNewPosition(column, posY) {
-            const cards = column.querySelectorAll(".square:not(.dragging)");
+            const cards = column.querySelectorAll(".square:not(.valid)");
             let result;
 
             for (let refer_card of cards) {
