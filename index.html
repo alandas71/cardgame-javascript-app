@@ -10,15 +10,15 @@
 <body>
     <div id="wallpaper">
         <div class="cards1">
-            <div class="square"><img id="card11" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card11" class="item1" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card12" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card12" class="item2" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card13" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card13" class="item3" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card14" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card14" class="item4" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card15" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card15" class="item5" width="100px" height="100px" draggable="true">
             </div>
         </div>
 
@@ -39,28 +39,28 @@
                 <div class="column" id="column5"></div>
             </div>
             <div class="cards3">
-                <div class="square"><img id="card31" class="item" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="card31" class="item1" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card32" class="item" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="card32" class="item2" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card33" class="item" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="card33" class="item3" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card34" class="item" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="card34" class="item4" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card35" class="item" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="card35" class="item5" width="100px" height="100px" draggable="true">
                 </div>
             </div>
         </div>
         <div class="cards2">
-            <div class="square"><img id="card21" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card21" class="item1" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card22" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card22" class="item2" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card23" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card23" class="item3" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card24" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card24" class="item4" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card25" class="item" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="card25" class="item5" width="100px" height="100px" draggable="true">
             </div>
         </div>
     </div>
@@ -129,12 +129,73 @@
                 } else {
                     item.appendChild(dragging);
                 }
+                var elementDiv = document.querySelectorAll("#column1 img").length;
+                var validDiv1 = document.getElementById("column1");
+                var valid11 = validDiv1.querySelector("#card11");
+                var valid21 = validDiv1.querySelector("#card21");
+                var valid31 = validDiv1.querySelector("#card31");
+                if (elementDiv == 3 && valid11 !== null && valid21 !== null && valid31 !== null) {
+                    document.querySelector('.silaba1').style.backgroundColor = "#16d70b";
+                    if (elementDiv == 3) {
+                        reload1 = true;
+                    }
+                }
+                var elementDiv2 = document.querySelectorAll("#column2 img").length;
+                var validDiv2 = document.getElementById("column2");
+                var valid12 = validDiv2.querySelector("#card12");
+                var valid22 = validDiv2.querySelector("#card22");
+                var valid32 = validDiv2.querySelector("#card32");
+                if (elementDiv2 == 3 && valid12 !== null && valid22 !== null && valid32 !== null) {
+                    document.querySelector('.silaba2').style.backgroundColor = "#16d70b";
+                    if (elementDiv == 3) {
+                        reload2 = true;
+                    }
+                }
+                var elementDiv3 = document.querySelectorAll("#column3 img").length;
+                var validDiv3 = document.getElementById("column3");
+                var valid13 = validDiv3.querySelector("#card13");
+                var valid23 = validDiv3.querySelector("#card23");
+                var valid33 = validDiv3.querySelector("#card33");
+                if (elementDiv3 == 3 && valid13 !== null && valid23 !== null && valid33 !== null) {
+                    document.querySelector('.silaba3').style.backgroundColor = "#16d70b";
+                    if (elementDiv == 3) {
+                        reload3 = true;
+                    }
+                }
+                var elementDiv4 = document.querySelectorAll("#column4 img").length;
+                var validDiv4 = document.getElementById("column4");
+                var valid14 = validDiv4.querySelector("#card14");
+                var valid24 = validDiv4.querySelector("#card24");
+                var valid34 = validDiv4.querySelector("#card34");
+                if (elementDiv4 == 3 && valid14 !== null && valid24 !== null && valid34 !== null) {
+                    document.querySelector('.silaba4').style.backgroundColor = "#16d70b";
+                    if (elementDiv == 3) {
+                        reload4 = true;
+                    }
+                }
+                var elementDiv5 = document.querySelectorAll("#column5 img").length;
+                var validDiv5 = document.getElementById("column5");
+                var valid15 = validDiv5.querySelector("#card15");
+                var valid25 = validDiv5.querySelector("#card25");
+                var valid35 = validDiv5.querySelector("#card35");
+                if (elementDiv5 == 3 && valid15 !== null && valid25 !== null && valid35 !== null) {
+                    document.querySelector('.silaba5').style.backgroundColor = "#16d70b";
+                    if (elementDiv == 3) {
+                        reload5 = true;
+                    }
+                }
+                if (reload1 == true && reload2 == true && reload3 == true && reload4 == true && reload5 == true) {
+                    setTimeout(() => {
+                        location.reload()
+                    }, "2000");
+                }
             });
         });
 
         function getNewPosition(column, posY) {
-            const cards = column.querySelectorAll(".square:not(.valid)");
+            const cards = column.querySelectorAll(".square:not(.dragging)");
             let result;
+
 
             for (let refer_card of cards) {
                 const box = refer_card.getBoundingClientRect();
@@ -145,6 +206,7 @@
 
             return result;
         }
+
     </script>
 </body>
 
