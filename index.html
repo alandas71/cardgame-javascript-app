@@ -67,23 +67,22 @@
     <script>
 
         var silabas = [
-            { silaba: "BA", img1: "img/bala.jpg", img2: "img/banana.jpg", img3: "img/batata.jpg" },
-            { silaba: "BE", img1: "img/bebe.jpg", img2: "img/beliche.jpg", img3: "img/berinjela.jpg" },
-            { silaba: "BI", img1: "img/bicicleta.jpg", img2: "img/bico.jpg", img3: "img/bigode.jpg" },
-            { silaba: "BO", img1: "img/bola.jpg", img2: "img/bota.jpg", img3: "img/botao.jpg" },
-            { silaba: "BU", img1: "img/bufalo.jpg", img2: "img/bule.jpg", img3: "img/buzina.jpg" },
-            { silaba: "CA", img1: "img/cama.jpg", img2: "img/casa.jpg", img3: "img/cavalo.jpg" },
-            { silaba: "CO", img1: "img/copo.jpg", img2: "img/coracao.jpg", img3: "img/coelho.jpg" },
-            { silaba: "CU", img1: "img/cubo.jpg", img2: "img/cuco.jpg", img3: "img/curativo.jpg" },
-            { silaba: "CE", img1: "img/cebola.jpg", img2: "img/cenoura.jpg", img3: "img/cereja.jpg" },
-            { silaba: "CI", img1: "img/cigarra.jpg", img2: "img/cigarro.jpg", img3: "img/cisne.jpg" },
+            { silaba: "BA", img1: "img/bala.jpg", nome1: "bala", img2: "img/banana.jpg", img3: "img/batata.jpg" },
+            { silaba: "BE", img1: "img/bebe.jpg", nome1: "bebe", img2: "img/beliche.jpg", img3: "img/berinjela.jpg" },
+            { silaba: "BI", img1: "img/bicicleta.jpg", nome1: "bicicleta", img2: "img/bico.jpg", img3: "img/bigode.jpg" },
+            { silaba: "BO", img1: "img/bola.jpg", nome1: "bola", img2: "img/bota.jpg", img3: "img/botao.jpg" },
+            { silaba: "BU", img1: "img/bufalo.jpg", nome1: "bufalo", img2: "img/bule.jpg", img3: "img/buzina.jpg" },
+            { silaba: "CA", img1: "img/cama.jpg", nome1: "cama", img2: "img/casa.jpg", img3: "img/cavalo.jpg" },
+            { silaba: "CO", img1: "img/copo.jpg", nome1: "copo", img2: "img/coracao.jpg", img3: "img/coelho.jpg" },
+            { silaba: "CU", img1: "img/cubo.jpg", nome1: "cubo", img2: "img/cuco.jpg", img3: "img/curativo.jpg" },
+            { silaba: "CE", img1: "img/cebola.jpg", nome1: "cebla", img2: "img/cenoura.jpg", img3: "img/cereja.jpg" },
+            { silaba: "CI", img1: "img/cigarra.jpg", nome1: "cigarra", img2: "img/cigarro.jpg", img3: "img/cisne.jpg" },
         ];
 
         var quantidade = silabas.length;
         var finalArr = Math.floor(Math.random() * quantidade / 5) * 5 + 5;
         var inicialArr = finalArr - 5;
         var arrSelecao = silabas.slice(inicialArr, finalArr);
-
 
         var silaba1 = document.querySelector(".silaba1").innerHTML = arrSelecao[0].silaba;
         var silaba2 = document.querySelector(".silaba2").innerHTML = arrSelecao[1].silaba;
@@ -129,16 +128,18 @@
                 } else {
                     item.appendChild(dragging);
                 }
-                var elementDiv = document.querySelectorAll("#column1 img").length;
+                var elementDiv1 = document.querySelectorAll("#column1 img").length;
                 var validDiv1 = document.getElementById("column1");
                 var valid11 = validDiv1.querySelector("#card11");
                 var valid21 = validDiv1.querySelector("#card21");
                 var valid31 = validDiv1.querySelector("#card31");
-                if (elementDiv == 3 && valid11 !== null && valid21 !== null && valid31 !== null) {
+                if (elementDiv1 == 3 && valid11 !== null && valid21 !== null && valid31 !== null) {
                     document.querySelector('.silaba1').style.backgroundColor = "#16d70b";
-                    if (elementDiv == 3) {
+                    if (elementDiv1 == 3) {
                         reload1 = true;
                     }
+                } else {
+                    document.querySelector('.silaba1').style.backgroundColor = "";
                 }
                 var elementDiv2 = document.querySelectorAll("#column2 img").length;
                 var validDiv2 = document.getElementById("column2");
@@ -147,9 +148,11 @@
                 var valid32 = validDiv2.querySelector("#card32");
                 if (elementDiv2 == 3 && valid12 !== null && valid22 !== null && valid32 !== null) {
                     document.querySelector('.silaba2').style.backgroundColor = "#16d70b";
-                    if (elementDiv == 3) {
+                    if (elementDiv2 == 3) {
                         reload2 = true;
                     }
+                } else {
+                    document.querySelector('.silaba2').style.backgroundColor = "";
                 }
                 var elementDiv3 = document.querySelectorAll("#column3 img").length;
                 var validDiv3 = document.getElementById("column3");
@@ -158,9 +161,11 @@
                 var valid33 = validDiv3.querySelector("#card33");
                 if (elementDiv3 == 3 && valid13 !== null && valid23 !== null && valid33 !== null) {
                     document.querySelector('.silaba3').style.backgroundColor = "#16d70b";
-                    if (elementDiv == 3) {
+                    if (elementDiv3 == 3) {
                         reload3 = true;
                     }
+                } else {
+                    document.querySelector('.silaba3').style.backgroundColor = "";
                 }
                 var elementDiv4 = document.querySelectorAll("#column4 img").length;
                 var validDiv4 = document.getElementById("column4");
@@ -169,9 +174,11 @@
                 var valid34 = validDiv4.querySelector("#card34");
                 if (elementDiv4 == 3 && valid14 !== null && valid24 !== null && valid34 !== null) {
                     document.querySelector('.silaba4').style.backgroundColor = "#16d70b";
-                    if (elementDiv == 3) {
+                    if (elementDiv4 == 3) {
                         reload4 = true;
                     }
+                } else {
+                    document.querySelector('.silaba4').style.backgroundColor = "";
                 }
                 var elementDiv5 = document.querySelectorAll("#column5 img").length;
                 var validDiv5 = document.getElementById("column5");
@@ -180,9 +187,11 @@
                 var valid35 = validDiv5.querySelector("#card35");
                 if (elementDiv5 == 3 && valid15 !== null && valid25 !== null && valid35 !== null) {
                     document.querySelector('.silaba5').style.backgroundColor = "#16d70b";
-                    if (elementDiv == 3) {
+                    if (elementDiv5 == 3) {
                         reload5 = true;
                     }
+                } else {
+                    document.querySelector('.silaba5').style.backgroundColor = "";
                 }
                 if (reload1 == true && reload2 == true && reload3 == true && reload4 == true && reload5 == true) {
                     setTimeout(() => {
