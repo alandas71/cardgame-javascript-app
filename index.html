@@ -10,15 +10,15 @@
 <body>
     <div id="wallpaper">
         <div class="cards1">
-            <div class="square"><img id="card11" class="item1" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardLeft0" class="item1" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card12" class="item2" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardLeft1" class="item2" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card13" class="item3" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardLeft2" class="item3" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card14" class="item4" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardLeft3" class="item4" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card15" class="item5" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardLeft4" class="item5" width="100px" height="100px" draggable="true">
             </div>
         </div>
 
@@ -26,11 +26,11 @@
             <h1>Jogo das silabas</h1>
             <p>Arraste cada figura à sua sílaba inicial</p>
 
+            <div class="silaba0 squareSilaba"></div>
             <div class="silaba1 squareSilaba"></div>
             <div class="silaba2 squareSilaba"></div>
             <div class="silaba3 squareSilaba"></div>
             <div class="silaba4 squareSilaba"></div>
-            <div class="silaba5 squareSilaba"></div>
             <div class="columns">
                 <div class="column" id="column1"></div>
                 <div class="column" id="column2"></div>
@@ -39,28 +39,28 @@
                 <div class="column" id="column5"></div>
             </div>
             <div class="cards3">
-                <div class="square"><img id="card31" class="item1" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="cardBottom0" class="item1" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card32" class="item2" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="cardBottom1" class="item2" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card33" class="item3" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="cardBottom2" class="item3" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card34" class="item4" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="cardBottom3" class="item4" width="100px" height="100px" draggable="true">
                 </div>
-                <div class="square"><img id="card35" class="item5" width="100px" height="100px" draggable="true">
+                <div class="square"><img id="cardBottom4" class="item5" width="100px" height="100px" draggable="true">
                 </div>
             </div>
         </div>
         <div class="cards2">
-            <div class="square"><img id="card21" class="item1" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardRight0" class="item1" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card22" class="item2" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardRight1" class="item2" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card23" class="item3" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardRight2" class="item3" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card24" class="item4" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardRight3" class="item4" width="100px" height="100px" draggable="true">
             </div>
-            <div class="square"><img id="card25" class="item5" width="100px" height="100px" draggable="true">
+            <div class="square"><img id="cardRight4" class="item5" width="100px" height="100px" draggable="true">
             </div>
         </div>
     </div>
@@ -83,30 +83,27 @@
         var finalArr = Math.floor(Math.random() * quantidade / 5) * 5 + 5;
         var inicialArr = finalArr - 5;
         var arrSelecao = silabas.slice(inicialArr, finalArr);
+        arrSelecao = arrSelecao.sort((a, b) => {
+            let sa = a.silaba.toLowerCase(),
+            sb = b.silaba.toLowerCase();
 
-        var silaba1 = document.querySelector(".silaba1").innerHTML = arrSelecao[0].silaba;
-        var silaba2 = document.querySelector(".silaba2").innerHTML = arrSelecao[1].silaba;
-        var silaba3 = document.querySelector(".silaba3").innerHTML = arrSelecao[2].silaba;
-        var silaba4 = document.querySelector(".silaba4").innerHTML = arrSelecao[3].silaba;
-        var silaba5 = document.querySelector(".silaba5").innerHTML = arrSelecao[4].silaba;
-
-        var imgSquare = document.querySelector("#card11").src = arrSelecao[0].img1;
-        var imgSquare = document.querySelector("#card12").src = arrSelecao[1].img1;
-        var imgSquare = document.querySelector("#card13").src = arrSelecao[2].img1;
-        var imgSquare = document.querySelector("#card14").src = arrSelecao[3].img1;
-        var imgSquare = document.querySelector("#card15").src = arrSelecao[4].img1;
-
-        var imgSquare = document.querySelector("#card21").src = arrSelecao[0].img2;
-        var imgSquare = document.querySelector("#card22").src = arrSelecao[1].img2;
-        var imgSquare = document.querySelector("#card23").src = arrSelecao[2].img2;
-        var imgSquare = document.querySelector("#card24").src = arrSelecao[3].img2;
-        var imgSquare = document.querySelector("#card25").src = arrSelecao[4].img2;
-
-        var imgSquare = document.querySelector("#card31").src = arrSelecao[0].img3;
-        var imgSquare = document.querySelector("#card32").src = arrSelecao[1].img3;
-        var imgSquare = document.querySelector("#card33").src = arrSelecao[2].img3;
-        var imgSquare = document.querySelector("#card34").src = arrSelecao[3].img3;
-        var imgSquare = document.querySelector("#card35").src = arrSelecao[4].img3;
+            if (sa < sb) {
+                return -1;
+            }
+            if (sa > sb) {
+                return 1;
+            }
+            return 0;
+        });
+        // Adicionado um foreach para evitar as repetições de cod
+        arrSelecao.forEach((e, index) => {
+            // Monta as silabas
+            document.querySelector(".silaba" + index).innerHTML = e.silaba;
+            //Monta as imagens
+            document.querySelector("#cardLeft" + index).src = e.img1;
+            document.querySelector("#cardRight" + index).src = e.img2;
+            document.querySelector("#cardBottom" + index).src = e.img3;
+        });
 
         const columns = document.querySelectorAll(".column");
 
@@ -130,68 +127,68 @@
                 }
                 var elementDiv1 = document.querySelectorAll("#column1 img").length;
                 var validDiv1 = document.getElementById("column1");
-                var valid11 = validDiv1.querySelector("#card11");
-                var valid21 = validDiv1.querySelector("#card21");
-                var valid31 = validDiv1.querySelector("#card31");
+                var valid11 = validDiv1.querySelector("#cardLeft0");
+                var valid21 = validDiv1.querySelector("#cardRight0");
+                var valid31 = validDiv1.querySelector("#cardBottom0");
                 if (elementDiv1 == 3 && valid11 !== null && valid21 !== null && valid31 !== null) {
-                    document.querySelector('.silaba1').style.backgroundColor = "#16d70b";
+                    document.querySelector('.silaba0').style.backgroundColor = "#16d70b";
                     if (elementDiv1 == 3) {
                         reload1 = true;
                     }
                 } else {
-                    document.querySelector('.silaba1').style.backgroundColor = "";
+                    document.querySelector('.silaba0').style.backgroundColor = "";
                 }
                 var elementDiv2 = document.querySelectorAll("#column2 img").length;
                 var validDiv2 = document.getElementById("column2");
-                var valid12 = validDiv2.querySelector("#card12");
-                var valid22 = validDiv2.querySelector("#card22");
-                var valid32 = validDiv2.querySelector("#card32");
+                var valid12 = validDiv2.querySelector("#cardLeft1");
+                var valid22 = validDiv2.querySelector("#cardRight1");
+                var valid32 = validDiv2.querySelector("#cardBottom1");
                 if (elementDiv2 == 3 && valid12 !== null && valid22 !== null && valid32 !== null) {
-                    document.querySelector('.silaba2').style.backgroundColor = "#16d70b";
+                    document.querySelector('.silaba1').style.backgroundColor = "#16d70b";
                     if (elementDiv2 == 3) {
                         reload2 = true;
                     }
                 } else {
-                    document.querySelector('.silaba2').style.backgroundColor = "";
+                    document.querySelector('.silaba1').style.backgroundColor = "";
                 }
                 var elementDiv3 = document.querySelectorAll("#column3 img").length;
                 var validDiv3 = document.getElementById("column3");
-                var valid13 = validDiv3.querySelector("#card13");
-                var valid23 = validDiv3.querySelector("#card23");
-                var valid33 = validDiv3.querySelector("#card33");
+                var valid13 = validDiv3.querySelector("#cardLeft2");
+                var valid23 = validDiv3.querySelector("#cardRight2");
+                var valid33 = validDiv3.querySelector("#cardBottom2");
                 if (elementDiv3 == 3 && valid13 !== null && valid23 !== null && valid33 !== null) {
-                    document.querySelector('.silaba3').style.backgroundColor = "#16d70b";
+                    document.querySelector('.silaba2').style.backgroundColor = "#16d70b";
                     if (elementDiv3 == 3) {
                         reload3 = true;
                     }
                 } else {
-                    document.querySelector('.silaba3').style.backgroundColor = "";
+                    document.querySelector('.silaba2').style.backgroundColor = "";
                 }
                 var elementDiv4 = document.querySelectorAll("#column4 img").length;
                 var validDiv4 = document.getElementById("column4");
-                var valid14 = validDiv4.querySelector("#card14");
-                var valid24 = validDiv4.querySelector("#card24");
-                var valid34 = validDiv4.querySelector("#card34");
+                var valid14 = validDiv4.querySelector("#cardLeft3");
+                var valid24 = validDiv4.querySelector("#cardRight3");
+                var valid34 = validDiv4.querySelector("#cardBottom3");
                 if (elementDiv4 == 3 && valid14 !== null && valid24 !== null && valid34 !== null) {
-                    document.querySelector('.silaba4').style.backgroundColor = "#16d70b";
+                    document.querySelector('.silaba3').style.backgroundColor = "#16d70b";
                     if (elementDiv4 == 3) {
                         reload4 = true;
                     }
                 } else {
-                    document.querySelector('.silaba4').style.backgroundColor = "";
+                    document.querySelector('.silaba3').style.backgroundColor = "";
                 }
                 var elementDiv5 = document.querySelectorAll("#column5 img").length;
                 var validDiv5 = document.getElementById("column5");
-                var valid15 = validDiv5.querySelector("#card15");
-                var valid25 = validDiv5.querySelector("#card25");
-                var valid35 = validDiv5.querySelector("#card35");
+                var valid15 = validDiv5.querySelector("#cardLeft4");
+                var valid25 = validDiv5.querySelector("#cardRight4");
+                var valid35 = validDiv5.querySelector("#cardBottom4");
                 if (elementDiv5 == 3 && valid15 !== null && valid25 !== null && valid35 !== null) {
-                    document.querySelector('.silaba5').style.backgroundColor = "#16d70b";
+                    document.querySelector('.silaba4').style.backgroundColor = "#16d70b";
                     if (elementDiv5 == 3) {
                         reload5 = true;
                     }
                 } else {
-                    document.querySelector('.silaba5').style.backgroundColor = "";
+                    document.querySelector('.silaba4').style.backgroundColor = "";
                 }
                 if (reload1 == true && reload2 == true && reload3 == true && reload4 == true && reload5 == true) {
                     setTimeout(() => {
