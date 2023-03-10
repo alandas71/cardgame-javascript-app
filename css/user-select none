@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 h1 {
@@ -29,7 +30,6 @@ img {
     flex-direction: column;
     width: 700px;
     padding: 20px;
-    user-select: none;
 }
 
 .cards1 {
@@ -68,7 +68,6 @@ img {
     border: black solid 2px;
     margin-bottom: 5px;
     font-size: 50px;
-    user-select: none;
 }
 
 .columns {
@@ -78,6 +77,11 @@ img {
     justify-content: center;
     gap: 4px;
 
+}
+
+.columns .dragging:nth-child(n+4) {
+    border: red solid 5px;
+    float: right;
 }
 
 .column {
