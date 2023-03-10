@@ -10,15 +10,20 @@
 <body>
     <div id="wallpaper">
         <div class="cards1">
-            <div class="square"><img id="cardLeft0" class="item1" width="100px" height="100px" draggable="true">
+            <div class="square squareLeft0"><img id="cardLeft0" class="itemLeft0" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardLeft1" class="item2" width="100px" height="100px" draggable="true">
+            <div class="square squareLeft1"><img id="cardLeft1" class="itemLeft1" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardLeft2" class="item3" width="100px" height="100px" draggable="true">
+            <div class="square squareLeft2"><img id="cardLeft2" class="itemLeft2" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardLeft3" class="item4" width="100px" height="100px" draggable="true">
+            <div class="square squareLeft3"><img id="cardLeft3" class="itemLeft3" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardLeft4" class="item5" width="100px" height="100px" draggable="true">
+            <div class="square squareLeft4"><img id="cardLeft4" class="itemLeft4" width="100px" height="100px"
+                    draggable="true">
             </div>
         </div>
 
@@ -39,44 +44,70 @@
                 <div class="column" id="column5"></div>
             </div>
             <div class="cards3">
-                <div class="square"><img id="cardBottom0" class="item1" width="100px" height="100px" draggable="true">
+                <div class="square squareBottom0"><img id="cardBottom0" class="itemBottom0" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="square"><img id="cardBottom1" class="item2" width="100px" height="100px" draggable="true">
+                <div class="square squareBottom1"><img id="cardBottom1" class="itemBottom1" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="square"><img id="cardBottom2" class="item3" width="100px" height="100px" draggable="true">
+                <div class="square squareBottom2"><img id="cardBottom2" class="itemBottom2" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="square"><img id="cardBottom3" class="item4" width="100px" height="100px" draggable="true">
+                <div class="square squareBottom3"><img id="cardBottom3" class="itemBottom3" width="100px" height="100px"
+                        draggable="true">
                 </div>
-                <div class="square"><img id="cardBottom4" class="item5" width="100px" height="100px" draggable="true">
+                <div class="square squareBottom4"><img id="cardBottom4" class="itemBottom4" width="100px" height="100px"
+                        draggable="true">
                 </div>
             </div>
         </div>
         <div class="cards2">
-            <div class="square"><img id="cardRight0" class="item1" width="100px" height="100px" draggable="true">
+            <div class="square squareRight0"><img id="cardRight0" class="itemRight0" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardRight1" class="item2" width="100px" height="100px" draggable="true">
+            <div class="square squareRight1"><img id="cardRight1" class="itemRight1" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardRight2" class="item3" width="100px" height="100px" draggable="true">
+            <div class="square squareRight2"><img id="cardRight2" class="itemRight2" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardRight3" class="item4" width="100px" height="100px" draggable="true">
+            <div class="square squareRight3"><img id="cardRight3" class="itemRight3" width="100px" height="100px"
+                    draggable="true">
             </div>
-            <div class="square"><img id="cardRight4" class="item5" width="100px" height="100px" draggable="true">
+            <div class="square squareRight4"><img id="cardRight4" class="itemRight4" width="100px" height="100px"
+                    draggable="true">
             </div>
         </div>
     </div>
     <script>
 
+        // cria uma ordem aleatória de números para o posicionamento das cartas
+        var maximo = 5;
+
+        var i, squareRandom = [];
+        for (i = 0; i < maximo; i++) {
+            squareRandom[i] = i;
+        }
+
+        var p, n, tmp;
+        for (p = squareRandom.length; p;) {
+            n = Math.random() * p-- | 0;
+            tmp = squareRandom[n];
+            squareRandom[n] = squareRandom[p];
+            squareRandom[p] = tmp;
+        }
+
         var silabas = [
-            { silaba: "BA", img1: "img/bala.jpg", nome1: "bala", img2: "img/banana.jpg", img3: "img/batata.jpg" },
-            { silaba: "BE", img1: "img/bebe.jpg", nome1: "bebe", img2: "img/beliche.jpg", img3: "img/berinjela.jpg" },
-            { silaba: "BI", img1: "img/bicicleta.jpg", nome1: "bicicleta", img2: "img/bico.jpg", img3: "img/bigode.jpg" },
-            { silaba: "BO", img1: "img/bola.jpg", nome1: "bola", img2: "img/bota.jpg", img3: "img/botao.jpg" },
-            { silaba: "BU", img1: "img/bufalo.jpg", nome1: "bufalo", img2: "img/bule.jpg", img3: "img/buzina.jpg" },
-            { silaba: "CA", img1: "img/cama.jpg", nome1: "cama", img2: "img/casa.jpg", img3: "img/cavalo.jpg" },
-            { silaba: "CO", img1: "img/copo.jpg", nome1: "copo", img2: "img/coracao.jpg", img3: "img/coelho.jpg" },
-            { silaba: "CU", img1: "img/cubo.jpg", nome1: "cubo", img2: "img/cuco.jpg", img3: "img/curativo.jpg" },
-            { silaba: "CE", img1: "img/cebola.jpg", nome1: "cebla", img2: "img/cenoura.jpg", img3: "img/cereja.jpg" },
-            { silaba: "CI", img1: "img/cigarra.jpg", nome1: "cigarra", img2: "img/cigarro.jpg", img3: "img/cisne.jpg" },
+            { silaba: "BA", img1: "img/bala.jpg", img2: "img/banana.jpg", img3: "img/batata.jpg" },
+            { silaba: "BE", img1: "img/bebe.jpg", img2: "img/beliche.jpg", img3: "img/berinjela.jpg" },
+            { silaba: "BI", img1: "img/bicicleta.jpg", img2: "img/bico.jpg", img3: "img/bigode.jpg" },
+            { silaba: "BO", img1: "img/bola.jpg", img2: "img/bota.jpg", img3: "img/botao.jpg" },
+            { silaba: "BU", img1: "img/bufalo.jpg", img2: "img/bule.jpg", img3: "img/buzina.jpg" },
+            { silaba: "CA", img1: "img/cama.jpg", img2: "img/casa.jpg", img3: "img/cavalo.jpg" },
+            { silaba: "CO", img1: "img/copo.jpg", img2: "img/coracao.jpg", img3: "img/coelho.jpg" },
+            { silaba: "CU", img1: "img/cubo.jpg", img2: "img/cuco.jpg", img3: "img/curativo.jpg" },
+            { silaba: "CE", img1: "img/cebola.jpg", img2: "img/cenoura.jpg", img3: "img/cereja.jpg" },
+            { silaba: "CI", img1: "img/cigarra.jpg", img2: "img/cigarro.jpg", img3: "img/cisne.jpg" },
         ];
 
         var quantidade = silabas.length;
@@ -85,7 +116,7 @@
         var arrSelecao = silabas.slice(inicialArr, finalArr);
         arrSelecao = arrSelecao.sort((a, b) => {
             let sa = a.silaba.toLowerCase(),
-            sb = b.silaba.toLowerCase();
+                sb = b.silaba.toLowerCase();
 
             if (sa < sb) {
                 return -1;
@@ -95,14 +126,17 @@
             }
             return 0;
         });
+
         // Adicionado um foreach para evitar as repetições de cod
         arrSelecao.forEach((e, index) => {
             // Monta as silabas
             document.querySelector(".silaba" + index).innerHTML = e.silaba;
             //Monta as imagens
-            document.querySelector("#cardLeft" + index).src = e.img1;
-            document.querySelector("#cardRight" + index).src = e.img2;
-            document.querySelector("#cardBottom" + index).src = e.img3;
+            document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
+            document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
+            document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
+
+            console.log(squareRandom[index])
         });
 
         const columns = document.querySelectorAll(".column");
@@ -118,18 +152,13 @@
             item.addEventListener("dragover", (e) => {
                 e.preventDefault();
                 const dragging = document.querySelector(".dragging");
-                const applyAfter = getNewPosition(item, e.clientY);
+                item.appendChild(dragging);
 
-                if (applyAfter) {
-                    applyAfter.insertAdjacentElement("afterend", dragging);
-                } else {
-                    item.appendChild(dragging);
-                }
                 var elementDiv1 = document.querySelectorAll("#column1 img").length;
                 var validDiv1 = document.getElementById("column1");
-                var valid11 = validDiv1.querySelector("#cardLeft0");
-                var valid21 = validDiv1.querySelector("#cardRight0");
-                var valid31 = validDiv1.querySelector("#cardBottom0");
+                var valid11 = validDiv1.querySelector("#cardLeft" + squareRandom[0]);
+                var valid21 = validDiv1.querySelector("#cardRight" + squareRandom[0]);
+                var valid31 = validDiv1.querySelector("#cardBottom" + squareRandom[0]);
                 if (elementDiv1 == 3 && valid11 !== null && valid21 !== null && valid31 !== null) {
                     document.querySelector('.silaba0').style.backgroundColor = "#16d70b";
                     if (elementDiv1 == 3) {
@@ -138,11 +167,12 @@
                 } else {
                     document.querySelector('.silaba0').style.backgroundColor = "";
                 }
+
                 var elementDiv2 = document.querySelectorAll("#column2 img").length;
                 var validDiv2 = document.getElementById("column2");
-                var valid12 = validDiv2.querySelector("#cardLeft1");
-                var valid22 = validDiv2.querySelector("#cardRight1");
-                var valid32 = validDiv2.querySelector("#cardBottom1");
+                var valid12 = validDiv2.querySelector("#cardLeft" + squareRandom[1]);
+                var valid22 = validDiv2.querySelector("#cardRight" + squareRandom[1]);
+                var valid32 = validDiv2.querySelector("#cardBottom" + squareRandom[1]);
                 if (elementDiv2 == 3 && valid12 !== null && valid22 !== null && valid32 !== null) {
                     document.querySelector('.silaba1').style.backgroundColor = "#16d70b";
                     if (elementDiv2 == 3) {
@@ -151,11 +181,12 @@
                 } else {
                     document.querySelector('.silaba1').style.backgroundColor = "";
                 }
+
                 var elementDiv3 = document.querySelectorAll("#column3 img").length;
                 var validDiv3 = document.getElementById("column3");
-                var valid13 = validDiv3.querySelector("#cardLeft2");
-                var valid23 = validDiv3.querySelector("#cardRight2");
-                var valid33 = validDiv3.querySelector("#cardBottom2");
+                var valid13 = validDiv3.querySelector("#cardLeft" + squareRandom[2]);
+                var valid23 = validDiv3.querySelector("#cardRight" + squareRandom[2]);
+                var valid33 = validDiv3.querySelector("#cardBottom" + squareRandom[2]);
                 if (elementDiv3 == 3 && valid13 !== null && valid23 !== null && valid33 !== null) {
                     document.querySelector('.silaba2').style.backgroundColor = "#16d70b";
                     if (elementDiv3 == 3) {
@@ -166,9 +197,9 @@
                 }
                 var elementDiv4 = document.querySelectorAll("#column4 img").length;
                 var validDiv4 = document.getElementById("column4");
-                var valid14 = validDiv4.querySelector("#cardLeft3");
-                var valid24 = validDiv4.querySelector("#cardRight3");
-                var valid34 = validDiv4.querySelector("#cardBottom3");
+                var valid14 = validDiv4.querySelector("#cardLeft" + squareRandom[3]);
+                var valid24 = validDiv4.querySelector("#cardRight" + squareRandom[3]);
+                var valid34 = validDiv4.querySelector("#cardBottom" + squareRandom[3]);
                 if (elementDiv4 == 3 && valid14 !== null && valid24 !== null && valid34 !== null) {
                     document.querySelector('.silaba3').style.backgroundColor = "#16d70b";
                     if (elementDiv4 == 3) {
@@ -177,11 +208,12 @@
                 } else {
                     document.querySelector('.silaba3').style.backgroundColor = "";
                 }
+
                 var elementDiv5 = document.querySelectorAll("#column5 img").length;
                 var validDiv5 = document.getElementById("column5");
-                var valid15 = validDiv5.querySelector("#cardLeft4");
-                var valid25 = validDiv5.querySelector("#cardRight4");
-                var valid35 = validDiv5.querySelector("#cardBottom4");
+                var valid15 = validDiv5.querySelector("#cardLeft" + squareRandom[4]);
+                var valid25 = validDiv5.querySelector("#cardRight" + squareRandom[4]);
+                var valid35 = validDiv5.querySelector("#cardBottom" + squareRandom[4]);
                 if (elementDiv5 == 3 && valid15 !== null && valid25 !== null && valid35 !== null) {
                     document.querySelector('.silaba4').style.backgroundColor = "#16d70b";
                     if (elementDiv5 == 3) {
@@ -190,6 +222,7 @@
                 } else {
                     document.querySelector('.silaba4').style.backgroundColor = "";
                 }
+
                 if (reload1 == true && reload2 == true && reload3 == true && reload4 == true && reload5 == true) {
                     setTimeout(() => {
                         location.reload()
@@ -197,22 +230,6 @@
                 }
             });
         });
-
-        function getNewPosition(column, posY) {
-            const cards = column.querySelectorAll(".square:not(.dragging)");
-            let result;
-
-
-            for (let refer_card of cards) {
-                const box = refer_card.getBoundingClientRect();
-                const boxCenterY = box + box.height / 2;
-
-                if (posY >= boxCenterY) result = refer_card;
-            }
-
-            return result;
-        }
-
     </script>
 </body>
 
