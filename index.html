@@ -10,25 +10,26 @@
 <body>
     <div id="wallpaper">
         <div class="cards1">
-            <div class="square squareLeft0"><img id="cardLeft0" class="itemLeft0" width="100px" height="100px"
+            <div class="square squareLeft0"><img id="cardLeft0" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareLeft1"><img id="cardLeft1" class="itemLeft1" width="100px" height="100px"
+            <div class="square squareLeft1"><img id="cardLeft1" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareLeft2"><img id="cardLeft2" class="itemLeft2" width="100px" height="100px"
+            <div class="square squareLeft2"><img id="cardLeft2" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareLeft3"><img id="cardLeft3" class="itemLeft3" width="100px" height="100px"
+            <div class="square squareLeft3"><img id="cardLeft3" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareLeft4"><img id="cardLeft4" class="itemLeft4" width="100px" height="100px"
+            <div class="square squareLeft4"><img id="cardLeft4" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
         </div>
 
         <div id="jogo-silabas">
             <h1>Jogo das silabas</h1>
+            <div class="print"></div>
             <p>Arraste cada figura à sua sílaba inicial</p>
 
             <div class="silaba0 squareSilaba"></div>
@@ -44,37 +45,37 @@
                 <div class="column" id="column5"></div>
             </div>
             <div class="cards3">
-                <div class="square squareBottom0"><img id="cardBottom0" class="itemBottom0" width="100px" height="100px"
+                <div class="square squareBottom0"><img id="cardBottom0" class="item" width="100px" height="100px"
                         draggable="true">
                 </div>
-                <div class="square squareBottom1"><img id="cardBottom1" class="itemBottom1" width="100px" height="100px"
+                <div class="square squareBottom1"><img id="cardBottom1" class="item" width="100px" height="100px"
                         draggable="true">
                 </div>
-                <div class="square squareBottom2"><img id="cardBottom2" class="itemBottom2" width="100px" height="100px"
+                <div class="square squareBottom2"><img id="cardBottom2" class="item" width="100px" height="100px"
                         draggable="true">
                 </div>
-                <div class="square squareBottom3"><img id="cardBottom3" class="itemBottom3" width="100px" height="100px"
+                <div class="square squareBottom3"><img id="cardBottom3" class="item" width="100px" height="100px"
                         draggable="true">
                 </div>
-                <div class="square squareBottom4"><img id="cardBottom4" class="itemBottom4" width="100px" height="100px"
+                <div class="square squareBottom4"><img id="cardBottom4" class="item" width="100px" height="100px"
                         draggable="true">
                 </div>
             </div>
         </div>
         <div class="cards2">
-            <div class="square squareRight0"><img id="cardRight0" class="itemRight0" width="100px" height="100px"
+            <div class="square squareRight0"><img id="cardRight0" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareRight1"><img id="cardRight1" class="itemRight1" width="100px" height="100px"
+            <div class="square squareRight1"><img id="cardRight1" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareRight2"><img id="cardRight2" class="itemRight2" width="100px" height="100px"
+            <div class="square squareRight2"><img id="cardRight2" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareRight3"><img id="cardRight3" class="itemRight3" width="100px" height="100px"
+            <div class="square squareRight3"><img id="cardRight3" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
-            <div class="square squareRight4"><img id="cardRight4" class="itemRight4" width="100px" height="100px"
+            <div class="square squareRight4"><img id="cardRight4" class="item" width="100px" height="100px"
                     draggable="true">
             </div>
         </div>
@@ -98,16 +99,16 @@
         }
 
         var silabas = [
-            { silaba: "BA", img1: "img/bala.jpg", img2: "img/banana.jpg", img3: "img/batata.jpg" },
-            { silaba: "BE", img1: "img/bebe.jpg", img2: "img/beliche.jpg", img3: "img/berinjela.jpg" },
-            { silaba: "BI", img1: "img/bicicleta.jpg", img2: "img/bico.jpg", img3: "img/bigode.jpg" },
-            { silaba: "BO", img1: "img/bola.jpg", img2: "img/bota.jpg", img3: "img/botao.jpg" },
-            { silaba: "BU", img1: "img/bufalo.jpg", img2: "img/bule.jpg", img3: "img/buzina.jpg" },
-            { silaba: "CA", img1: "img/cama.jpg", img2: "img/casa.jpg", img3: "img/cavalo.jpg" },
-            { silaba: "CO", img1: "img/copo.jpg", img2: "img/coracao.jpg", img3: "img/coelho.jpg" },
-            { silaba: "CU", img1: "img/cubo.jpg", img2: "img/cuco.jpg", img3: "img/curativo.jpg" },
-            { silaba: "CE", img1: "img/cebola.jpg", img2: "img/cenoura.jpg", img3: "img/cereja.jpg" },
-            { silaba: "CI", img1: "img/cigarra.jpg", img2: "img/cigarro.jpg", img3: "img/cisne.jpg" },
+            { silaba: "BA", nome1: "-LA", nome2: "-NA-NA", nome3: "-TA-TA", img1: "img/bala.jpg", img2: "img/banana.jpg", img3: "img/batata.jpg" },
+            { silaba: "BE", nome1: "-BE", nome2: "-LI-CHE", nome3: "-RIN-GE-LA", img1: "img/bebe.jpg", img2: "img/beliche.jpg", img3: "img/berinjela.jpg" },
+            { silaba: "BI", nome1: "-CI-CLE-TA", nome2: "-CO", nome3: "-GO-DE", img1: "img/bicicleta.jpg", img2: "img/bico.jpg", img3: "img/bigode.jpg" },
+            { silaba: "BO", nome1: "-LA", nome2: "-TA", nome3: "-TÃO", img1: "img/bola.jpg", img2: "img/bota.jpg", img3: "img/botao.jpg" },
+            { silaba: "BU", nome1: "-FA-LO", nome2: "-LE", nome3: "-ZI-NA", img1: "img/bufalo.jpg", img2: "img/bule.jpg", img3: "img/buzina.jpg" },
+            { silaba: "CA", nome1: "-MA", nome2: "-SA", nome3: "-VA-LO", img1: "img/cama.jpg", img2: "img/casa.jpg", img3: "img/cavalo.jpg" },
+            { silaba: "CO", nome1: "-PO", nome2: "-RA-ÇÃO", nome3: "-E-LHO", img1: "img/copo.jpg", img2: "img/coracao.jpg", img3: "img/coelho.jpg" },
+            { silaba: "CU", nome1: "-BO", nome2: "-CO", nome3: "-RA-TI-VO", img1: "img/cubo.jpg", img2: "img/cuco.jpg", img3: "img/curativo.jpg" },
+            { silaba: "CE", nome1: "-BO-LA", nome2: "-NOU-RA", nome3: "-RE-JA", img1: "img/cebola.jpg", img2: "img/cenoura.jpg", img3: "img/cereja.jpg" },
+            { silaba: "CI", nome1: "-GAR-RA", nome2: "-GAR-RO", nome3: "-MEN-TO", img1: "img/cigarra.jpg", img2: "img/cigarro.jpg", img3: "img/cimento.jpg" },
         ];
 
         var quantidade = silabas.length;
@@ -129,18 +130,17 @@
 
         // Adicionado um foreach para evitar as repetições de cod
         arrSelecao.forEach((e, index) => {
-            // Monta as silabas
+            //Monta as silabas
             document.querySelector(".silaba" + index).innerHTML = e.silaba;
             //Monta as imagens
             document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
             document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
             document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
-
-            console.log(squareRandom[index])
         });
 
         const columns = document.querySelectorAll(".column");
 
+        //Adiciona uma classe quando o evento draggable estiver ativo e a tira quando estiver inativo
         document.addEventListener("dragstart", (e) => {
             e.target.classList.add("dragging");
         });
@@ -148,12 +148,14 @@
             e.target.classList.remove("dragging");
         });
 
+        //Seleciona as colunas, quando um item com a classe dragging estiver sobre uma das colunas, irá adiciona-lo a div em questão
         columns.forEach((item) => {
             item.addEventListener("dragover", (e) => {
                 e.preventDefault();
                 const dragging = document.querySelector(".dragging");
                 item.appendChild(dragging);
 
+                //valida a posição e a quantidade das cartas
                 var elementDiv1 = document.querySelectorAll("#column1 img").length;
                 var validDiv1 = document.getElementById("column1");
                 var valid11 = validDiv1.querySelector("#cardLeft" + squareRandom[0]);
@@ -223,6 +225,174 @@
                     document.querySelector('.silaba4').style.backgroundColor = "";
                 }
 
+                var validDiv1 = document.getElementById("column1");
+                var validDiv2 = document.getElementById("column2");
+                var validDiv3 = document.getElementById("column3");
+                var validDiv4 = document.getElementById("column4");
+                var validDiv5 = document.getElementById("column5");
+
+
+                //Escreve o nome do item
+                document.getElementById('cardLeft' + squareRandom[0]).ondragend = function (valid11) {
+                    var valid11 = validDiv1.querySelector("#cardLeft" + squareRandom[0]);
+                    if (valid11 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome1;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardRight' + squareRandom[0]).ondragend = function (valid21) {
+                    var valid21 = validDiv1.querySelector("#cardRight" + squareRandom[0]);
+                    if (valid21 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome2;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardBottom' + squareRandom[0]).ondragend = function (valid31) {
+                    var valid31 = validDiv1.querySelector("#cardBottom" + squareRandom[0]);
+                    if (valid31 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome3;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+
+
+                document.getElementById('cardLeft' + squareRandom[1]).ondragend = function (valid12) {
+                    var valid12 = validDiv2.querySelector("#cardLeft" + squareRandom[1]);
+                    if (valid12 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome1;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardRight' + squareRandom[1]).ondragend = function (valid22) {
+                    var valid22 = validDiv2.querySelector("#cardRight" + squareRandom[1]);
+                    if (valid22 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome2;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardBottom' + squareRandom[1]).ondragend = function (valid32) {
+                    var valid32 = validDiv2.querySelector("#cardBottom" + squareRandom[1]);
+                    if (valid32 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome3;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+
+
+                document.getElementById('cardLeft' + squareRandom[2]).ondragend = function (valid13) {
+                    var valid13 = validDiv3.querySelector("#cardLeft" + squareRandom[2]);
+                    if (valid13 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome1;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardRight' + squareRandom[2]).ondragend = function (valid23) {
+                    var valid23 = validDiv3.querySelector("#cardRight" + squareRandom[2]);
+                    if (valid23 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome2;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardBottom' + squareRandom[2]).ondragend = function (valid33) {
+                    var valid33 = validDiv3.querySelector("#cardBottom" + squareRandom[2]);
+                    if (valid33 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome3;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+
+
+                document.getElementById('cardLeft' + squareRandom[3]).ondragend = function (valid14) {
+                    var valid14 = validDiv4.querySelector("#cardLeft" + squareRandom[3]);
+                    if (valid14 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome1;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardRight' + squareRandom[3]).ondragend = function (valid24) {
+                    var valid24 = validDiv4.querySelector("#cardRight" + squareRandom[3]);
+                    if (valid24 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome2;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardBottom' + squareRandom[3]).ondragend = function (valid34) {
+                    var valid34 = validDiv4.querySelector("#cardBottom" + squareRandom[3]);
+                    if (valid34 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome3;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+
+
+                document.getElementById('cardLeft' + squareRandom[4]).ondragend = function (valid15) {
+                    var valid15 = validDiv5.querySelector("#cardLeft" + squareRandom[4]);
+                    if (valid15 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome1;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardRight' + squareRandom[4]).ondragend = function (valid25) {
+                    var valid25 = validDiv5.querySelector("#cardRight" + squareRandom[4]);
+                    if (valid25 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome2;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+                document.getElementById('cardBottom' + squareRandom[4]).ondragend = function (valid35) {
+                    var valid35 = validDiv5.querySelector("#cardBottom" + squareRandom[4]);
+                    if (valid35 !== null) {
+                        document.querySelector(".print").innerHTML = '';
+                        document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome3;
+                    }
+                    else {
+                        document.querySelector(".print").innerHTML = '';
+                    }
+                }
+
+                //Se a quantidade das colunas preenchidas forem iguais a 3 cartas validadas, recarrega a página 
                 if (reload1 == true && reload2 == true && reload3 == true && reload4 == true && reload5 == true) {
                     setTimeout(() => {
                         location.reload()
