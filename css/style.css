@@ -34,7 +34,7 @@ img {
 
 .print {
     display: inline-block;
-    width: 350px;
+    width: 400px;
     height: 70px;
     border: black solid 2px;
     font-size: 50px;
@@ -60,7 +60,7 @@ img {
     display: flex;
     justify-content: center;
     padding: 40px;
-    gap: 5px;
+    gap: 20px;
 }
 
 .square {
@@ -102,4 +102,9 @@ img {
 
 .dragging {
     cursor: grabbing;
+}
+
+.square img:hover {
+    transform: scale(1.25, 1.25);
+    border: #16d70b solid 2px;
 }
