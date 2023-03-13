@@ -108,3 +108,8 @@ img {
     transform: scale(1.25, 1.25);
     border: #16d70b solid 2px;
 }
+
+.btn {
+    width: 200px;
+    height: 50px;
+}
