@@ -38,7 +38,7 @@ var silabas = [
     { silaba: "GA", nome1: "-RRA-FA", nome2: "-TO", nome3: "-VE-TA", img1: "img/garrafa.jpg", img2: "img/gato.jpg", img3: "img/gaveta.jpg" },
     { silaba: "GE", nome1: "-LA-DEI-RA", nome2: "-LA-TI-NA", nome3: "-LO", img1: "img/geladeira.png", img2: "img/gelatina.jpg", img3: "img/gelo.jpg" },
     { silaba: "GI", nome1: "-GAN-TE", nome2: "-LE-TE", nome3: "-RA-FA", img1: "img/gigante.png", img2: "img/gilete.jpg", img3: "img/girafa.jpg" },
-    { silaba: "GO", nome1: "-FI-NHO", nome2: "-MA", nome3: "-TA", img1: "img/golfinho.jpg", img2: "img/goma.jpg", img3: "img/gota.jpg" },
+    { silaba: "GO", nome1: "-FI-NHO", nome2: "-RI-LA", nome3: "-TA", img1: "img/golfinho.jpg", img2: "img/gorila.jpg", img3: "img/gota.jpg" },
     { silaba: "GU", nome1: "-DE", nome2: "-LA", nome3: "I-TA-RRA", img1: "img/gude.jpg", img2: "img/gula.jpg", img3: "img/guitarra.jpg" },
     { silaba: "JA", nome1: "-CA", nome2: "-CA-RÉ", nome3: "-RRO", img1: "img/jaca.jpg", img2: "img/jacare.jpg", img3: "img/jarro.jpg" },
     { silaba: "JE", nome1: "-GUE", nome2: "-NI-PA-PO", nome3: "T-SKI", img1: "img/jegue.jpg", img2: "img/jenipapo.png", img3: "img/jetski.jpg" },
@@ -73,6 +73,34 @@ arrSelecao.forEach((e, index) => {
     document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
     document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
 });
+
+function preview() {
+    if (inicialArr > 0) {
+        finalArr = finalArr - 5;
+        inicialArr = inicialArr - 5;
+        var arrSelecao = silabas.slice(inicialArr, finalArr);
+        arrSelecao.forEach((e, index) => {
+            document.querySelector(".silaba" + index).innerHTML = e.silaba;
+            document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
+            document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
+            document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
+        });
+    }
+}
+
+function next() {
+    if (finalArr < quantidade) {
+        finalArr = finalArr + 5;
+        inicialArr = inicialArr + 5;
+        var arrSelecao = silabas.slice(inicialArr, finalArr);
+        arrSelecao.forEach((e, index) => {
+            document.querySelector(".silaba" + index).innerHTML = e.silaba;
+            document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
+            document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
+            document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
+        });
+    }
+}
 
 const columns = document.querySelectorAll(".column");
 

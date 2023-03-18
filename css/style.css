@@ -109,7 +109,11 @@ img {
     border: #16d70b solid 2px;
 }
 
-.btn {
+#btn {
+    text-align: center;
+}
+
+button {
     width: 200px;
     height: 50px;
 }
