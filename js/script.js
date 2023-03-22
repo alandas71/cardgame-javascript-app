@@ -31,7 +31,7 @@ var silabas = [
     { silaba: "DO", nome1: "-CE", nome2: "-MI-NÓ", nome3: "-RA", img1: "img/doce.jpg", img2: "img/domino.jpg", img3: "img/dora.jpg" },
     { silaba: "DU", nome1: "-EN-DE", nome2: "-REX", nome3: "-VI-DA", img1: "img/duende.jpg", img2: "img/durex.jpg", img3: "img/duvida.jpg" },
     { silaba: "FA", nome1: "-CA", nome2: "-DA", nome3: "-MI-LIA", img1: "img/faca.jpg", img2: "img/fada.jpg", img3: "img/familia.jpg" },
-    { silaba: "FE", nome1: "I-JÃO", nome2: "-RA", nome3: "-RRO", img1: "img/feijao.jpg", img2: "img/fera.webp", img3: "img/ferro.jpg" },
+    { silaba: "FE", nome1: "I-JÃO", nome2: "-RA", nome3: "R-RO", img1: "img/feijao.jpg", img2: "img/fera.webp", img3: "img/ferro.jpg" },
     { silaba: "FI", nome1: "-GO", nome2: "-TA", nome3: "-VE-LA", img1: "img/figo.jpg", img2: "img/fita.jpg", img3: "img/fivela.jpg" },
     { silaba: "FO", nome1: "-GÃO", nome2: "-GUEI-RA", nome3: "-LHA", img1: "img/fogao.png", img2: "img/fogueira.jpg", img3: "img/folha.jpg" },
     { silaba: "FU", nome1: "-NIL", nome2: "-RA-CÃO", nome3: "-TE-BOL", img1: "img/funil.jpg", img2: "img/furacao.jpg", img3: "img/futebol.jpg" },
@@ -65,42 +65,27 @@ arrSelecao = arrSelecao.sort((a, b) => {
 });
 
 // Adicionado um foreach para evitar as repetições de cod
-arrSelecao.forEach((e, index) => {
+var novaRodada = arrSelecao.forEach((e, index) => {
     //Monta as silabas
     document.querySelector(".silaba" + index).innerHTML = e.silaba;
     //Monta as imagens
     document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
     document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
     document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
-});
-
-function preview() {
-    if (inicialArr > 0) {
-        finalArr = finalArr - 5;
-        inicialArr = inicialArr - 5;
-        var arrSelecao = silabas.slice(inicialArr, finalArr);
-        arrSelecao.forEach((e, index) => {
-            document.querySelector(".silaba" + index).innerHTML = e.silaba;
-            document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
-            document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
-            document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
-        });
+    //Monta as os nomes
+    document.getElementById('cardLeft' + squareRandom[index]).ondragend = function () {
+        document.querySelector(".print").innerHTML = '...';
+        document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome1;
     }
-}
-
-function next() {
-    if (finalArr < quantidade) {
-        finalArr = finalArr + 5;
-        inicialArr = inicialArr + 5;
-        var arrSelecao = silabas.slice(inicialArr, finalArr);
-        arrSelecao.forEach((e, index) => {
-            document.querySelector(".silaba" + index).innerHTML = e.silaba;
-            document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
-            document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
-            document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
-        });
+    document.getElementById('cardRight' + squareRandom[index]).ondragend = function () {
+        document.querySelector(".print").innerHTML = '...';
+        document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome2;
     }
-}
+    document.getElementById('cardBottom' + squareRandom[index]).ondragend = function () {
+        document.querySelector(".print").innerHTML = '...';
+        document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome3;
+    }
+})
 
 const columns = document.querySelectorAll(".column");
 
@@ -203,173 +188,6 @@ columns.forEach((item) => {
             document.querySelector('.silaba4').style.backgroundColor = "";
         }
 
-        var validDiv1 = document.getElementById("column1");
-        var validDiv2 = document.getElementById("column2");
-        var validDiv3 = document.getElementById("column3");
-        var validDiv4 = document.getElementById("column4");
-        var validDiv5 = document.getElementById("column5");
-
-
-        //Escreve o nome do item
-        document.getElementById('cardLeft' + squareRandom[0]).ondragend = function (valid11) {
-            var valid11 = validDiv1.querySelector("#cardLeft" + squareRandom[0]);
-            if (valid11 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome1;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardRight' + squareRandom[0]).ondragend = function (valid21) {
-            var valid21 = validDiv1.querySelector("#cardRight" + squareRandom[0]);
-            if (valid21 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome2;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardBottom' + squareRandom[0]).ondragend = function (valid31) {
-            var valid31 = validDiv1.querySelector("#cardBottom" + squareRandom[0]);
-            if (valid31 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome3;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-
-
-        document.getElementById('cardLeft' + squareRandom[1]).ondragend = function (valid12) {
-            var valid12 = validDiv2.querySelector("#cardLeft" + squareRandom[1]);
-            if (valid12 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome1;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardRight' + squareRandom[1]).ondragend = function (valid22) {
-            var valid22 = validDiv2.querySelector("#cardRight" + squareRandom[1]);
-            if (valid22 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome2;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardBottom' + squareRandom[1]).ondragend = function (valid32) {
-            var valid32 = validDiv2.querySelector("#cardBottom" + squareRandom[1]);
-            if (valid32 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome3;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-
-
-        document.getElementById('cardLeft' + squareRandom[2]).ondragend = function (valid13) {
-            var valid13 = validDiv3.querySelector("#cardLeft" + squareRandom[2]);
-            if (valid13 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome1;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardRight' + squareRandom[2]).ondragend = function (valid23) {
-            var valid23 = validDiv3.querySelector("#cardRight" + squareRandom[2]);
-            if (valid23 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome2;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardBottom' + squareRandom[2]).ondragend = function (valid33) {
-            var valid33 = validDiv3.querySelector("#cardBottom" + squareRandom[2]);
-            if (valid33 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome3;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-
-
-        document.getElementById('cardLeft' + squareRandom[3]).ondragend = function (valid14) {
-            var valid14 = validDiv4.querySelector("#cardLeft" + squareRandom[3]);
-            if (valid14 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome1;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardRight' + squareRandom[3]).ondragend = function (valid24) {
-            var valid24 = validDiv4.querySelector("#cardRight" + squareRandom[3]);
-            if (valid24 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome2;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardBottom' + squareRandom[3]).ondragend = function (valid34) {
-            var valid34 = validDiv4.querySelector("#cardBottom" + squareRandom[3]);
-            if (valid34 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome3;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-
-
-        document.getElementById('cardLeft' + squareRandom[4]).ondragend = function (valid15) {
-            var valid15 = validDiv5.querySelector("#cardLeft" + squareRandom[4]);
-            if (valid15 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome1;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardRight' + squareRandom[4]).ondragend = function (valid25) {
-            var valid25 = validDiv5.querySelector("#cardRight" + squareRandom[4]);
-            if (valid25 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome2;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-        document.getElementById('cardBottom' + squareRandom[4]).ondragend = function (valid35) {
-            var valid35 = validDiv5.querySelector("#cardBottom" + squareRandom[4]);
-            if (valid35 !== null) {
-                document.querySelector(".print").innerHTML = '...';
-                document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome3;
-            }
-            else {
-                document.querySelector(".print").innerHTML = '...';
-            }
-        }
-
         //Se a quantidade das colunas preenchidas forem iguais a 3 cartas validadas, recarrega a página 
         if (reload1 == true && reload2 == true && reload3 == true && reload4 == true && reload5 == true) {
             setTimeout(() => {
@@ -378,3 +196,58 @@ columns.forEach((item) => {
         }
     });
 });
+
+//Botões (recria a rodada)
+function preview() {
+    if (inicialArr > 0) {
+        finalArr = finalArr - 5;
+        inicialArr = inicialArr - 5;
+        var arrSelecao = silabas.slice(inicialArr, finalArr);
+        arrSelecao.forEach((e, index) => {
+            document.querySelector(".silaba" + index).innerHTML = e.silaba;
+            document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
+            document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
+            document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
+
+            document.getElementById('cardLeft' + squareRandom[index]).ondragend = function () {
+                document.querySelector(".print").innerHTML = '...';
+                document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome1;
+            }
+            document.getElementById('cardRight' + squareRandom[index]).ondragend = function () {
+                document.querySelector(".print").innerHTML = '...';
+                document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome2;
+            }
+            document.getElementById('cardBottom' + squareRandom[index]).ondragend = function () {
+                document.querySelector(".print").innerHTML = '...';
+                document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome3;
+            }
+        });
+    }
+}
+
+function next() {
+    if (finalArr < quantidade) {
+        finalArr = finalArr + 5;
+        inicialArr = inicialArr + 5;
+        var arrSelecao = silabas.slice(inicialArr, finalArr);
+        arrSelecao.forEach((e, index) => {
+            document.querySelector(".silaba" + index).innerHTML = e.silaba;
+            document.querySelector("#cardLeft" + squareRandom[index]).src = e.img1;
+            document.querySelector("#cardRight" + squareRandom[index]).src = e.img2;
+            document.querySelector("#cardBottom" + squareRandom[index]).src = e.img3;
+
+            document.getElementById('cardLeft' + squareRandom[index]).ondragend = function () {
+                document.querySelector(".print").innerHTML = '...';
+                document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome1;
+            }
+            document.getElementById('cardRight' + squareRandom[index]).ondragend = function () {
+                document.querySelector(".print").innerHTML = '...';
+                document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome2;
+            }
+            document.getElementById('cardBottom' + squareRandom[index]).ondragend = function () {
+                document.querySelector(".print").innerHTML = '...';
+                document.querySelector(".print").innerHTML = arrSelecao[index].silaba + arrSelecao[index].nome3;
+            }
+        });
+    }
+}
