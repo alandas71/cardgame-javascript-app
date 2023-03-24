@@ -195,7 +195,6 @@ function novaRodada() {
         document.getElementById('cardLeft' + squareRandom[0]).ondragend = function (valid11) {
             var valid11 = validDiv1.querySelector("#cardLeft" + squareRandom[0]);
             if (valid11 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome1;
             }
             else {
@@ -205,7 +204,6 @@ function novaRodada() {
         document.getElementById('cardRight' + squareRandom[0]).ondragend = function (valid21) {
             var valid21 = validDiv1.querySelector("#cardRight" + squareRandom[0]);
             if (valid21 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome2;
             }
             else {
@@ -215,7 +213,6 @@ function novaRodada() {
         document.getElementById('cardBottom' + squareRandom[0]).ondragend = function (valid31) {
             var valid31 = validDiv1.querySelector("#cardBottom" + squareRandom[0]);
             if (valid31 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[0].silaba + arrSelecao[0].nome3;
             }
             else {
@@ -227,7 +224,6 @@ function novaRodada() {
         document.getElementById('cardLeft' + squareRandom[1]).ondragend = function (valid12) {
             var valid12 = validDiv2.querySelector("#cardLeft" + squareRandom[1]);
             if (valid12 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome1;
             }
             else {
@@ -237,7 +233,6 @@ function novaRodada() {
         document.getElementById('cardRight' + squareRandom[1]).ondragend = function (valid22) {
             var valid22 = validDiv2.querySelector("#cardRight" + squareRandom[1]);
             if (valid22 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome2;
             }
             else {
@@ -247,7 +242,6 @@ function novaRodada() {
         document.getElementById('cardBottom' + squareRandom[1]).ondragend = function (valid32) {
             var valid32 = validDiv2.querySelector("#cardBottom" + squareRandom[1]);
             if (valid32 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[1].silaba + arrSelecao[1].nome3;
             }
             else {
@@ -259,7 +253,6 @@ function novaRodada() {
         document.getElementById('cardLeft' + squareRandom[2]).ondragend = function (valid13) {
             var valid13 = validDiv3.querySelector("#cardLeft" + squareRandom[2]);
             if (valid13 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome1;
             }
             else {
@@ -269,7 +262,6 @@ function novaRodada() {
         document.getElementById('cardRight' + squareRandom[2]).ondragend = function (valid23) {
             var valid23 = validDiv3.querySelector("#cardRight" + squareRandom[2]);
             if (valid23 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome2;
             }
             else {
@@ -279,7 +271,6 @@ function novaRodada() {
         document.getElementById('cardBottom' + squareRandom[2]).ondragend = function (valid33) {
             var valid33 = validDiv3.querySelector("#cardBottom" + squareRandom[2]);
             if (valid33 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[2].silaba + arrSelecao[2].nome3;
             }
             else {
@@ -291,7 +282,6 @@ function novaRodada() {
         document.getElementById('cardLeft' + squareRandom[3]).ondragend = function (valid14) {
             var valid14 = validDiv4.querySelector("#cardLeft" + squareRandom[3]);
             if (valid14 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome1;
             }
             else {
@@ -301,7 +291,6 @@ function novaRodada() {
         document.getElementById('cardRight' + squareRandom[3]).ondragend = function (valid24) {
             var valid24 = validDiv4.querySelector("#cardRight" + squareRandom[3]);
             if (valid24 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome2;
             }
             else {
@@ -311,7 +300,6 @@ function novaRodada() {
         document.getElementById('cardBottom' + squareRandom[3]).ondragend = function (valid34) {
             var valid34 = validDiv4.querySelector("#cardBottom" + squareRandom[3]);
             if (valid34 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[3].silaba + arrSelecao[3].nome3;
             }
             else {
@@ -323,7 +311,6 @@ function novaRodada() {
         document.getElementById('cardLeft' + squareRandom[4]).ondragend = function (valid15) {
             var valid15 = validDiv5.querySelector("#cardLeft" + squareRandom[4]);
             if (valid15 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome1;
             }
             else {
@@ -333,7 +320,6 @@ function novaRodada() {
         document.getElementById('cardRight' + squareRandom[4]).ondragend = function (valid25) {
             var valid25 = validDiv5.querySelector("#cardRight" + squareRandom[4]);
             if (valid25 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome2;
             }
             else {
@@ -343,7 +329,6 @@ function novaRodada() {
         document.getElementById('cardBottom' + squareRandom[4]).ondragend = function (valid35) {
             var valid35 = validDiv5.querySelector("#cardBottom" + squareRandom[4]);
             if (valid35 !== null) {
-                document.querySelector(".print").innerHTML = '...';
                 document.querySelector(".print").innerHTML = arrSelecao[4].silaba + arrSelecao[4].nome3;
             }
             else {
@@ -353,17 +338,34 @@ function novaRodada() {
     })
 }
 
+var colocarSquare = document.querySelectorAll('.square img');
+
+function realocar() {
+    //faz array de todas os cards na coluna
+    var realocarCard = document.querySelectorAll(".column img")
+    realocarCard.forEach((e) => {
+        //regex que tira o nome da classe e deixa apenas os números
+        var lastNbm = e.className.replace(/[^0-9]/g, '');
+        //função para realocar as cartas
+        document.getElementById('quadrado' + lastNbm).appendChild(
+            document.querySelector('.' + e.className)
+        )
+    })
+}
+
 function preview() {
+    realocar();
     if (inicialArr > 0) {
         finalArr = finalArr - 5;
         inicialArr = inicialArr - 5;
-        novaRodada()
+        novaRodada();
     }
 }
 function next() {
+    realocar();
     if (finalArr < quantidade) {
         finalArr = finalArr + 5;
         inicialArr = inicialArr + 5;
-        novaRodada()
+        novaRodada();
     }
 }
